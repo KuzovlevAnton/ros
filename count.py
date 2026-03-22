@@ -17,6 +17,12 @@ def get_cords(d, a):
     return (math.cos(math.radians(a))*d, math.sin(math.radians(a))*d)
 
 
+def get_cords_global(d, a):
+    global robot
+    x,y,theta=robot.pose
+    return (math.cos(math.radians(a+theta))*d+x, math.sin(math.radians(a+theta))*d+y)
+
+
 def count_points(distances, x_zone_start, x_zone_end, y_zone_start, y_zone_end, min_distance):
     points=[]
     clusters=[]
